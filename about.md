@@ -4,12 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hi, there. Thank you for your interest in this blog! It is awesome!   
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+I started this blog for my rekindled interest in ruby development, and my new responsibility of managing a remote team. 
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+This site is hosted with [GitHub Pages][github-pages]{:target="_blank"}, which is a wonderful free service for blogging or personal profile.  
+
+You may find the source code of this site [here][site-repo]{:target="_blank"}.
+
+If you find anything interesting or any mistake in the content, feel free to drop a comment on that page or create an issue [here][site-repo-issues]{:target="_blank"}.
+
+Cheers,  
+Billy Kong
+
+
+[github-pages]: https://pages.github.com/
+[site-repo]: https://github.com/billykong/billykong.github.io
+[site-repo-issues]: https://github.com/billykong/billykong.github.io/issues
