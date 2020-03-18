@@ -16,7 +16,7 @@
 title: Billy's Tech Blog
 email: billyklh@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Ruby, Remote Team Management, and More
+  Ruby, Remote Team Management, Kubernetes, and More
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: billyklh
