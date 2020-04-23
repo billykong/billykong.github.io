@@ -6,7 +6,7 @@ permalink: /about/
 
 Hi, there. Thank you for your interest in this blog! It is awesome!   
 
-I started this blog for my rekindled interest in ruby development, microservices deployment with kubernetes, and my new responsibility of managing a remote team. 
+I started this blog for my rekindled interest in ruby development, microservices deployment with kubernetes, and my new responsibility of managing a remote team. We have been using Node for the past few years.
 
 This site is hosted with [GitHub Pages][github-pages]{:target="_blank"}, which is a wonderful free service for blogging or personal profile.  
 
