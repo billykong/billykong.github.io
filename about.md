@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+![cat profile image](./assets/img/Cat_2020-05-17.png)
 
 Hi, there. Thank you for your interest in this blog! It is awesome!   
 
