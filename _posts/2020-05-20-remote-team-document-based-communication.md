@@ -2,7 +2,7 @@
 layout: post
 title:  "Remote Team Document-based Communication"
 date:   2020-05-20 18:15:00 +0800
-categories: ruby
+categories: remote-team
 comments: true
 published: false
 ---
