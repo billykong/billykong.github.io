@@ -23,5 +23,5 @@ group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
    # To keep dependency in sync with github; to update "bundle update github-pages"
    gem "github-pages"
-   gem "jekyll-mermaid"
+   gem "jekyll-mermaid", "1.0.0"
 end

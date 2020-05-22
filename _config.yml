@@ -35,5 +35,6 @@ exclude:
   - Gemfile.lock
 plugins:
   - jekyll-seo-tag
+  - jekyll-mermaid
 mermaid:
   src: 'https://unpkg.com/mermaid@7.1.2/dist/mermaid.js'
