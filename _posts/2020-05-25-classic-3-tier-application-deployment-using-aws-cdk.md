@@ -13,3 +13,5 @@ It is simpler than writing a CloudFromation template from scratch.
 Perhaps it is a good entry point for developers or companies who want to adapt infrastructure-as-code but deterred by the initial complexity.
 
 
+### References
+- [aws-cdk is now generally available](https://aws.amazon.com/about-aws/whats-new/2019/07/the-aws-cloud-development-kit-aws-cdk-is-now-generally-available1/)
