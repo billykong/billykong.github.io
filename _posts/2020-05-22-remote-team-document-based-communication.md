@@ -4,6 +4,7 @@ title:  "Remote Team Document-based Communication"
 date:   2020-05-22 13:15:00 +0800
 categories: remote-team
 comments: true
+mermaid: true
 published: true
 ---
 
@@ -86,7 +87,7 @@ Bascially, you do the followings:
 5. Assign reviewer(i.e. Assignee)
 6. Done! The reviewer will be notified and be able to comment on your request.
 
-{% mermaid %}
+<div class="mermaid">
 graph TD
     A(New Requirements) --> B[Create new branch]
     B --> C{File Exist?}
@@ -101,8 +102,7 @@ graph TD
     K --> |Commit and push| J
     J --> |Yes| L[Merge branch]
     L --> M[New Requirements Communication Successful]
-
-{% endmermaid %}
+</div>
 
 ### What is gained?
 
