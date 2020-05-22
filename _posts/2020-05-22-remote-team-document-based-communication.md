@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Remote Team Document-based Communication"
-date:   2020-05-20 18:15:00 +0800
+date:   2020-05-22 13:15:00 +0800
 categories: remote-team
 comments: true
 published: true
@@ -86,6 +86,23 @@ Bascially, you do the followings:
 5. Assign reviewer(i.e. Assignee)
 6. Done! The reviewer will be notified and be able to comment on your request.
 
+{% mermaid %}
+graph TD
+    A(New Requirements) --> B[Create new branch]
+    B --> C{File Exist?}
+    C -->|Yes| D[Create new markdown file]
+    C -->|No| E[Edit exiting markdown file]
+    D --> F[git push]
+    E --> F
+    F --> G[Create merge request]
+    G --> H[Assign reviewer]
+    H --> J{All issues resolved?}
+    J --> |No| K[Edit file]
+    K --> |Commit and push| J
+    J --> |Yes| L[Merge branch]
+    L --> M[New Requirements Communication Successful]
+
+{% endmermaid %}
 
 ### What is gained?
 
@@ -123,6 +140,10 @@ By the way, the [GitLab Handbook](https://about.gitlab.com/handbook/){:target="_
 ### References
 1. [We’ve been trained to make paper](https://ben.balter.com/2012/10/19/we-ve-been-trained-to-make-paper/){:target="_blank"}  
 2. [GitLab Handbook](https://about.gitlab.com/handbook/){:target="_blank"}  
+3. [Markdown Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/){:target="_blank"}  
+4. [Source code of this blog](https://github.com/billykong/billykong.github.io){:target="_blank"}
+5. [GitLab Merge Request Flow](https://docs.gitlab.com/ee/user/project/merge_requests/){:target="_blank"}
+6. [GitHub Pull Request Flow](https://guides.github.com/introduction/flow/){:target="_blank"}
 
 <br>
 <br>
