@@ -18,5 +18,10 @@ You can find the source code for the Jekyll minima theme at:
 ### To run locally
 `$ bundle exec jekyll serve --watch`
 
+### To override theme files
+1. `$ open $(bundle show minima)`
+2. Copy target files to this repository
+3. Modify copied file in this repository
+
 ### TODO
 - [ ] Add thumbnail and header image for blogs
