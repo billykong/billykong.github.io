@@ -34,3 +34,4 @@ exclude:
   - Gemfile.lock
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
