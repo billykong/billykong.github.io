@@ -27,11 +27,12 @@ google_analytics: UA-160855457-1
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
-  - jekyll-feed
+
 exclude:
   - Gemfile
   - Gemfile.lock
+  
 plugins:
+  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
