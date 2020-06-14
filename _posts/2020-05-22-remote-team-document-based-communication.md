@@ -14,7 +14,7 @@ The COVID-19 pandemic has brought many changes to our lives, one of them being m
 We have switched to remote working since January 2020. During the time, we have natually developed a git-based communication workflow. If you are working in the software industry, you will see that it is not unlike the pull request workflow most of us used for source code. The precise and asynchronous communication model for source code works just as well for software design, schedule planning, and team administration discussion.
 
 
-So far the efficiency is even better than before in addition of better transparency. I would like to share our approach here with some details. For anyone who may be looking for a way to build and run a remote team, I hope this is useful.
+So far the efficiency is even better than before COVID-19 in addition of better transparency. I would like to share our approach here with some details. For anyone who may be looking for a way to build and run a remote team, I hope this is useful.
 
 
 ### Overview
