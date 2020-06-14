@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Remote Team Document-based Communication"
+title:  "Remote Team Git-based Communication"
 date:   2020-05-22 13:15:00 +0800
 categories: remote-team
 comments: true
@@ -9,9 +9,12 @@ published: true
 ---
 
 ### Motivation
-The COVID-19 pandemic has brought many changes to our lives, one of them being many people needs to work from home now. As from my experience as a software engineer, the biggest changes our daily work is how do we communicate efficiently.  
+The COVID-19 pandemic has brought many changes to our lives, one of them being many people are working from home now. It is not necessarily a hinterance of communication, but we do need to adapt. Many things that used to be communicated verbally, needs to be communicated textually.
   
-It is good to see that many companies, mostly software companies, have found their way. We, at 10Life, have also adapted remote working since January 2020. So far the efficiency is even better than before in addition of better transparency. I would like to share our approach here with some details. For anyone who may be looking for a way to build and run a remote team, I hope this is useful.
+We have switched to remote working since January 2020. During the time, we have natually developed a git-based communication workflow. If you are working in the software industry, you will see that it is not unlike the pull request workflow most of us used for source code. The precise and asynchronous communication model for source code works just as well for software design, schedule planning, and team administration discussion.
+
+
+So far the efficiency is even better than before in addition of better transparency. I would like to share our approach here with some details. For anyone who may be looking for a way to build and run a remote team, I hope this is useful.
 
 
 ### Overview
