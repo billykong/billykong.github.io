@@ -76,7 +76,7 @@ $ brew install v8-315
 # 2. Install libv8 using the v8 binary we just installed
 $ gem install libv8 -v '3.16.14.19' -- --with-system-v8
 # 3. Install therubyracer using the v8 binary we just installed
-$ gem install therubyracer -- --with-v8-dir=/usr/local/opt/v8@315
+$ gem install therubyracer -- --with-v8-dir=/usr/local/opt/v8@315 # your path could be different, e.g. /usr/local/opt/v8@3.15
 # 4. Install the remaining dependencies
 $ bundle install
 ```
