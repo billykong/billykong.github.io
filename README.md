@@ -1,27 +1,35 @@
 # Billy's Tech Blog
 
-## Website
-[https://billykong.github.io/](https://billykong.github.io/)
+[https://billykong.github.io/](https://billykong.github.io/), built by GitHub Pages with Jekyll and the [minima](https://github.com/jekyll/minima) theme.
 
-## Jekyll
-This blog uses Jekyll. Please find the setup [here](https://jekyllrb.com/docs/).  
+## Write a post
 
-You can find the source code for the Jekyll minima theme at:
-[minima](https://github.com/jekyll/minima)
+Add `_posts/YYYY-MM-DD-slug.md` with front matter:
 
-## Setup 
+```yaml
+---
+layout: post
+title: "The title"
+description: "One sentence for search results and link previews."
+---
+```
 
-### Dev Environment
-`$ rvm use 2.7@jekyll`
-`$ bundle install`
+Add `mermaid: true` to render ```` ```mermaid ```` blocks.
 
-### To run locally
-`$ bundle exec jekyll serve --watch`
+## Preview locally
 
-### To override theme files
-1. `$ open $(bundle show minima)`
-2. Copy target files to this repository
-3. Modify copied file in this repository
+With Docker, no Ruby needed. Run it from this repo's folder (it mounts `$PWD`):
 
-### TODO
-- [ ] Add thumbnail and header image for blogs
+```bash
+docker run --rm -it -p 4000:4000 -u "$(id -u):$(id -g)" -e HOME=/tmp -e BUNDLE_PATH=/tmp/bundle \
+  -v "$PWD":/site -w /site ruby:3.3 \
+  sh -c 'bundle install && bundle exec jekyll serve --host 0.0.0.0'
+```
+
+`-u` keeps `_site` owned by you rather than root; gems install inside the container, so each run reinstalls them (about a minute).
+
+Then open http://localhost:4000. With Ruby installed: `bundle install && bundle exec jekyll serve`.
+
+## Override theme files
+
+Copy the file from the [minima](https://github.com/jekyll/minima) version GitHub Pages uses (`bundle info minima`) into the same path here, and edit the copy.
