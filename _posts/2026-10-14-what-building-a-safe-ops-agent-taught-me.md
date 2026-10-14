@@ -101,6 +101,10 @@ The human approver is the last line for the proposals the rules can't judge, and
 
 The code, the tests, and all 150-odd findings are in [the repo][repo]. Next I'll write up the architecture as a whole.
 
+---
+
+*This post was drafted with AI (Claude) from the project's findings logs, then edited and checked by me.*
+
 [repo]: https://github.com/billykong/safe-ops-agent-k8s
 [prd]: https://github.com/billykong/safe-ops-agent-k8s/tree/main/docs/prd
 [gaps]: https://github.com/billykong/safe-ops-agent-k8s/blob/main/docs/known-gaps.md
