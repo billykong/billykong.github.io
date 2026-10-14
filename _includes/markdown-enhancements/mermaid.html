@@ -1,8 +1,14 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
 <script>
-   mermaid.initialize({
-       startOnLoad:true,
-       theme: 'default'
-   });
-   window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+  // kramdown renders ```mermaid fences as highlighted code blocks; turn each
+  // into the plain <pre class="mermaid"> that Mermaid looks for.
+  document.querySelectorAll('div.language-mermaid, pre > code.language-mermaid').forEach(function (el) {
+    var block = el.tagName === 'CODE' ? el.parentElement : el;
+    var pre = document.createElement('pre');
+    pre.className = 'mermaid';
+    pre.textContent = el.textContent;
+    block.replaceWith(pre);
+  });
+  mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'strict' });
+  mermaid.run();
 </script>
