@@ -5,20 +5,16 @@ permalink: /about/
 ---
 ![cat profile image](./assets/img/Cat_2020-05-17.png)
 
-Hi, there. Thank you for your interest in this blog! It is awesome!   
+Hi, I'm Billy Kong. I work on platform engineering and Kubernetes, and lately on a question that keeps getting more urgent: how do you let an AI agent operate infrastructure without trusting it?
 
-I started this blog for my rekindled interest in ruby development, microservices deployment with kubernetes, and my new responsibility of managing a remote team. We have been using Node for the past few years.
+This blog is where I write up what I build and what it teaches me, including the parts that didn't work the first time. The code behind the posts is on [GitHub][github], with its tests.
 
-This site is hosted with [GitHub Pages][github-pages]{:target="_blank"}, which is a wonderful free service for blogging or personal profile.  
+Current project: [safe-ops-agent-k8s][safe-ops], a reference implementation of an AI ops agent on Kubernetes that can investigate and propose changes, but can't change anything without passing a policy gate and a human.
 
-You may find the source code of this site [here][site-repo]{:target="_blank"}.
+If you spot a mistake, or something here is useful to you, [open an issue][site-repo-issues].
 
-If you find anything interesting or any mistake in the content, feel free to drop a comment on that page or create an issue [here][site-repo-issues]{:target="_blank"}.
-
-Cheers,  
 Billy Kong
 
-
-[github-pages]: https://pages.github.com/
-[site-repo]: https://github.com/billykong/billykong.github.io
+[github]: https://github.com/billykong
+[safe-ops]: https://github.com/billykong/safe-ops-agent-k8s
 [site-repo-issues]: https://github.com/billykong/billykong.github.io/issues

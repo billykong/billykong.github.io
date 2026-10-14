@@ -16,13 +16,12 @@
 title: Billy's Tech Blog
 email: billyklh@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Ruby, Node, Kubernetes, Remote Team, and More
+  Platform engineering, Kubernetes, and running AI agents safely.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://billykong.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: billyklh
 github_username:  billykong
 
-google_analytics: UA-160855457-1
 
 # Build settings
 markdown: kramdown
@@ -31,6 +30,8 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+  - README.md
+  - LICENSE
 
 plugins:
   - jekyll-feed
