@@ -2,6 +2,7 @@
 layout: post
 title: "Defence in depth for autonomous infrastructure agents"
 description: "How to let an AI agent investigate and fix infrastructure without trusting it: one task traced through every layer of a working Kubernetes implementation, with what each layer stops, how that's proven, and what it doesn't stop."
+image: /assets/img/posts/defence-in-depth-card.png
 mermaid: true
 ---
 
