@@ -3,6 +3,7 @@ layout: post
 title: "Eight things building a safe AI ops agent taught me"
 description: "I built an AI agent that operates Kubernetes but can't change anything on its own, and logged about 150 findings along the way. Here are the lessons the design didn't predict."
 image: /assets/img/posts/safe-ops-lessons-card.png
+redirect_from: /safe-ops-lessons/
 ---
 
 Over the last few weeks I built [safe-ops-agent-k8s][repo]: a reference implementation of an AI agent that operates a Kubernetes cluster without being trusted. It investigates incidents, runs code it writes, reads tools, and proposes changes. It can't change anything itself.
