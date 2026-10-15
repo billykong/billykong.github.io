@@ -4,6 +4,7 @@ title: "Defence in depth for autonomous infrastructure agents"
 description: "How to let an AI agent investigate and fix infrastructure without trusting it: one task traced through every layer of a working Kubernetes implementation, with what each layer stops, how that's proven, and what it doesn't stop."
 image: /assets/img/posts/defence-in-depth-card.png
 mermaid: true
+redirect_from: /defence-in-depth/
 ---
 
 An AI agent that operates infrastructure reads things strangers can write: log lines, tickets, tool output, web pages. Any of them can carry an instruction, and today's models can't reliably tell an instruction from data. Even an agent nobody has tampered with will sometimes propose a wrong change. If it can apply changes directly, either kind of mistake reaches production at machine speed.
