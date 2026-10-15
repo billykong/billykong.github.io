@@ -10,7 +10,7 @@ An AI agent that operates infrastructure reads things strangers can write: log l
 
 You can't fix that inside the model. So the question becomes: **how do you build the system around the model so that it doesn't matter when the model is wrong, or on the attacker's side?**
 
-This post is my answer, as an architecture. It's built and tested in [safe-ops-agent-k8s][repo], a reference implementation on Kubernetes that runs on a laptop. I'll follow one task through every layer, and for each say what it stops, how I know, and what it doesn't stop. (The [previous post][lessons] covers what building it taught me.)
+This post is my answer, as an architecture. It's built and tested in [safe-ops-agent-k8s][repo], a reference implementation on Kubernetes that runs on a laptop. I'll follow one task through every layer, and for each say what it stops, how I know, and what it doesn't stop. (The [previous post][lessons] covers what building it taught me.) There's also [a 9-minute video][video] of this post, with demos recorded on the cluster.
 
 ## The rules the design follows
 
@@ -193,13 +193,14 @@ If you're putting an agent near infrastructure:
 8. Have a kill switch, and drill it.
 9. Test every control from both sides, assume the model complies with the attacker, and write down what's still open.
 
-The code, tests and findings are in [the repo][repo], under the MIT license. Next, I'll turn this post into a video, with the demos recorded from the running cluster.
+The code, tests and findings are in [the repo][repo], under the MIT license. The [video version][video] walks through the same layers, with the approval gate, the kill-switch drill and the red-team running on the cluster.
 
 ---
 
 *This post was drafted with AI (Claude) from the project's requirements, findings and test results, then edited and checked by me.*
 
 [repo]: https://github.com/billykong/safe-ops-agent-k8s
+[video]: https://youtu.be/pDVeg_Gb_i8
 [lessons]: {% post_url 2026-10-14-what-building-a-safe-ops-agent-taught-me %}
 [gaps]: https://github.com/billykong/safe-ops-agent-k8s/blob/main/docs/known-gaps.md
 [gap01]: https://github.com/billykong/safe-ops-agent-k8s/blob/main/docs/known-gaps.md#gap-01-domain-fronting-through-the-pypi-egress-allowlist
