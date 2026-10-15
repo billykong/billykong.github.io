@@ -11,8 +11,11 @@ Add `_posts/YYYY-MM-DD-slug.md` with front matter:
 layout: post
 title: "The title"
 description: "One sentence for search results and link previews."
+redirect_from: /short-name/
 ---
 ```
+
+Give every post a short address with `redirect_from`: one to three words, lowercase, hyphenated, ending in `/`, and unique across posts. It redirects to the dated URL (via `jekyll-redirect-from`, which GitHub Pages ships), so `billykong.github.io/short-name/` fits where long links get cut off, such as YouTube descriptions. Use the short address when sharing; keep the dated URL as the canonical one. Existing short addresses: `/safe-ops-lessons/`, `/defence-in-depth/`.
 
 Add `mermaid: true` to render ```` ```mermaid ```` blocks.
 
