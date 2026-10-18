@@ -11,7 +11,7 @@ AI agents are getting good at operations work. Give one a ticket like *"upgrade 
 
 That matters because change is where outages come from. Google's SRE book puts it bluntly: ["roughly 70% of outages are due to changes in a live system"][sre]. In 2017 a single mistyped input to a routine capacity command took [Amazon S3 in its busiest region down for hours][s3].
 
-So who checks the AI's plan? Reading every plan line by line doesn't scale, and it's easy to miss things. Trusting the AI isn't an answer either. This post describes a third option I built and tested: **a small checker, with no AI in it, that checks every plan and explains the result in plain English.** It's called [planproof][repo].
+So who checks the AI's plan? Reading every plan line by line doesn't scale, and it's easy to miss things. Trusting the AI isn't an answer either. This post describes a third option I built and tested: **a small checker, with no AI in it, that checks every plan and explains the result in plain English.** It's called [planproof][repo]. There's also [an 11-minute video][video] of this post.
 
 **In short:**
 
@@ -195,13 +195,14 @@ Each entry, with what I took and where planproof falls short of the original, is
 - **Make the human's job small and specific.** "Is this goal what we asked for?" is a question a person can answer well. "Is this 40-line plan safe?" isn't.
 - **Look for prior art first.** Most of the hard thinking was done decades ago, in security and theorem proving. It just hasn't been pointed at AI agents much yet.
 
-The code, specification, tests and every result are in [the repo][repo].
+The code, specification, tests and every result are in [the repo][repo]. The [video version][video] covers the same ground, with the checker's output on screen.
 
 ---
 
 *This post was drafted with AI (Claude) from the project's requirements, test results and sources, then edited and checked by me.*
 
 [repo]: https://github.com/billykong/planproof
+[video]: https://youtu.be/7fQ-RVWXN7E
 [results]: https://github.com/billykong/planproof/tree/main/results
 [trials]: https://github.com/billykong/planproof/blob/main/results/agent-trials.md
 [seeded]: https://github.com/billykong/planproof/blob/main/results/seeded.md
