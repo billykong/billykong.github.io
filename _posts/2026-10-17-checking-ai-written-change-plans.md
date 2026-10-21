@@ -20,6 +20,8 @@ So who checks the AI's plan? Reading every plan line by line doesn't scale, and 
 - **The evidence:** of 25 deliberately bad plans, the checker stopped 20, and the other 5 are exactly the kind it tells the reader to check. Three AI models reviewing raw plans caught 12 of 18 bad ones; given planproof's report, all 18.
 - **Not new:** every part comes from published work going back to the 1960s. What's new is putting those parts together for AI-written ops plans, and measuring the result.
 
+**Update, 21 October 2026:** proving parts of the checker in Lean (the next step mentioned under "What it doesn't do") found two corner-case bugs in its model of Kubernetes, which no test had caught. After a drain, it could forget that a pod may still be on another node. During a rolling update, it forgot that the old pods are still running on their nodes. Each let it prove a plan that could take a deployment to zero. Both are fixed. No result in this post changed: none of the tested plans hit either case with a Proved verdict. [The details][leanfindings].
+
 ## The idea in one picture
 
 Think of a maths student and a strict examiner. The student (the AI) can be brilliant, creative and sometimes wrong. The examiner doesn't care how the student came up with the answer. They check each line against a fixed rulebook. You don't need to trust the student; you need to trust the examiner, and the examiner's job is small enough to check.
@@ -161,7 +163,8 @@ Reading raw plans, all three models approved the same two bad plans every time. 
 
 ## What it doesn't do
 
-- **The checker is only as good as its model of Kubernetes.** The model is deliberately simple and pessimistic, and it matched a real cluster in every test, but it's tested, not mathematically proved. A formal proof in Lean is the planned next step.
+- **It's a demo, not a production system.** It shows how such a check can work; it isn't meant to run real clusters.
+- **The checker is only as good as its model of Kubernetes.** The model is deliberately simple and pessimistic, and it matched a real cluster in every test. Proving it in Lean has started: three of the core rules are now proved for every possible plan, and that work found the two bugs in the update above.
 - **A person still checks the goal.** That's by design, and the evidence shows it's the one gap left.
 - **It covers seven operations** on nodes and deployments: cordon, uncordon, drain, scale, change image, restart, wait. Anything else isn't supported.
 - **The evidence is small.** 13 tickets, 25 bad plans, 12 review items, and AI reviewers rather than people.
@@ -202,6 +205,7 @@ The code, specification, tests and every result are in [the repo][repo]. The [vi
 *This post was drafted with AI (Claude) from the project's requirements, test results and sources, then edited and checked by me.*
 
 [repo]: https://github.com/billykong/planproof
+[leanfindings]: https://github.com/billykong/planproof/blob/main/docs/prd/areas/l-lean.md#findings
 [video]: https://youtu.be/7fQ-RVWXN7E
 [results]: https://github.com/billykong/planproof/tree/main/results
 [trials]: https://github.com/billykong/planproof/blob/main/results/agent-trials.md
