@@ -22,6 +22,8 @@ So who checks the AI's plan? Reading every plan line by line doesn't scale, and 
 
 **Update, 21 October 2026:** proving parts of the checker in Lean (the next step mentioned under "What it doesn't do") found two corner-case bugs in its model of Kubernetes, which no test had caught. After a drain, it could forget that a pod may still be on another node. During a rolling update, it forgot that the old pods are still running on their nodes. Each let it prove a plan that could take a deployment to zero. Both are fixed. No result in this post changed: none of the tested plans hit either case with a Proved verdict. [The details][leanfindings].
 
+**Update, 22 October 2026:** the Lean work is finished. A copy of the checker is now proved correct for six of its 13 rules, the core ones, and the proofs found a third bug of the same kind, also fixed. [The follow-up post][leanpost] compares the proved version with the one described here.
+
 ## The idea in one picture
 
 Think of a maths student and a strict examiner. The student (the AI) can be brilliant, creative and sometimes wrong. The examiner doesn't care how the student came up with the answer. They check each line against a fixed rulebook. You don't need to trust the student; you need to trust the examiner, and the examiner's job is small enough to check.
@@ -206,6 +208,7 @@ The code, specification, tests and every result are in [the repo][repo]. The [vi
 
 [repo]: https://github.com/billykong/planproof
 [leanfindings]: https://github.com/billykong/planproof/blob/main/docs/prd/areas/l-lean.md#findings
+[leanpost]: {% post_url 2026-10-22-proving-the-plan-checker-in-lean %}
 [video]: https://youtu.be/7fQ-RVWXN7E
 [results]: https://github.com/billykong/planproof/tree/main/results
 [trials]: https://github.com/billykong/planproof/blob/main/results/agent-trials.md
