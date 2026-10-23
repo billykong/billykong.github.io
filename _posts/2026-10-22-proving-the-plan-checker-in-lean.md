@@ -11,7 +11,7 @@ In [the last post][prev] I argued for a simple idea: **don't trust the AI's plan
 
 Why trust that checker? Last time the answer was: it's about 1,700 lines of plain Go, every rule is tested both ways, it was fuzzed, and its predictions matched a real cluster. That's good engineering. But it's still an argument from examples. Tests show the checker is right on the cases someone thought of, or a random generator happened to hit.
 
-This post is about the next step: writing the checker's rules down precisely in [Lean][lean], a proof assistant, and **proving** that when the checker says Proved, the rules hold. Not for 10,000 plans. For every plan.
+This post is about the next step: writing the checker's rules down precisely in [Lean][lean], a proof assistant, and **proving** that when the checker says Proved, the rules hold. Not for 10,000 plans. For every plan. There's also [a one-minute Short][short] of the main point.
 
 **In short:**
 
@@ -158,6 +158,7 @@ The specification, the proofs, and a page on what to review and what's only test
 
 [prev]: {% post_url 2026-10-17-checking-ai-written-change-plans %}
 [repo]: https://github.com/billykong/planproof
+[short]: https://www.youtube.com/shorts/hMDjRMeDX6A
 [leanreadme]: https://github.com/billykong/planproof/blob/main/lean/README.md
 [lean]: https://lean-lang.org/
 [lean4]: https://doi.org/10.1007/978-3-030-79876-5_37
