@@ -22,7 +22,7 @@ So who checks the AI's plan? Reading every plan line by line doesn't scale, and 
 
 **Update, 21 October 2026:** proving parts of the checker in Lean (the next step mentioned under "What it doesn't do") found two corner-case bugs in its model of Kubernetes, which no test had caught. After a drain, it could forget that a pod may still be on another node. During a rolling update, it forgot that the old pods are still running on their nodes. Each let it prove a plan that could take a deployment to zero. Both are fixed. No result in this post changed: none of the tested plans hit either case with a Proved verdict. [The details][leanfindings].
 
-**Update, 22 October 2026:** the Lean work is finished. A copy of the checker is now proved correct for its five core rules, and the proofs found a third bug of the same kind, also fixed. [The follow-up post][leanpost] compares the proved version with the one described here.
+**Update, 22 October 2026:** the Lean work is finished. A copy of the checker is now proved correct for six of its 13 rules, the core ones, and the proofs found a third bug of the same kind, also fixed. [The follow-up post][leanpost] compares the proved version with the one described here.
 
 ## The idea in one picture
 
