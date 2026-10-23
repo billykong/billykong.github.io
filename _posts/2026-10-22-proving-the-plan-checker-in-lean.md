@@ -24,6 +24,18 @@ This post is about the next step: writing the checker's rules down precisely in 
 
 Think of a bridge. You can drive a thousand trucks over it and watch it hold. Or an engineer can work out from the design that it holds *any* load up to its limit. The trucks are tests. The calculation is a proof. The calculation is only as good as its assumptions about steel and soil, which is why engineers still load-test the real bridge. But it covers the truck you didn't think to send.
 
+**Why 10,000 tests isn't enough.** Suppose a checker is wrong once in 10,000 plans, a 0.01% chance. Ten thousand passing tests would miss that bug 37% of the time. In production, over 10,000 plans, the chance it strikes at least once is 63%, and over 100,000 plans it's near certain:
+
+| A bug that strikes once in 10,000 plans | Chance |
+| --- | --- |
+| 10,000 passing tests miss it | 37% |
+| It strikes at least once in 10,000 real plans | 63% |
+| It strikes at least once in 100,000 real plans | over 99.99% |
+
+(The chance of missing it every time in *n* tries is (1 − 0.0001)<sup>*n*</sup>, about 37% at *n* = 10,000. Put the other way, 10,000 clean tests only show the failure rate is probably below about 0.03%, the ["rule of three"][ruleofthree] (Hanley and Lippman-Hand, 1983).)
+
+Real bugs are worse than this arithmetic, because they don't strike at random: they hide in corner cases that random tests rarely reach. None of planproof's 10,000 generated plans reached the first bug described below. For most code, tests are still the right trade-off. For the small core that every decision depends on, a proof covers every case, not just the ones sampled.
+
 A proof assistant makes the calculation impossible to fake. You write the claim, you write the argument, and Lean checks every step. If one step doesn't follow, it refuses. This is the same idea planproof is built on, one level down: a clever, untrusted author (here, whoever writes the proof) and a small, strict checker (Lean's kernel) that has the final say.
 
 That has a nice consequence. **I didn't write most of the proofs by hand. An AI assistant (Claude) drafted them, and Lean checked them.** I don't need to trust the AI, or even read the proofs, because Lean won't accept a wrong one. CI also rejects every way to cheat: the `sorry` placeholder that skips a step, extra assumed axioms, and anything that swaps in different code at run time. It's the same pattern planproof applies to AI-written plans.
@@ -123,6 +135,7 @@ There's public evidence for this split too. The [Csmith project][csmith] tested 
 | Idea | Where it comes from |
 | --- | --- |
 | Trust a small checker that checks a clever author's proofs | The LCF prover ([Gordon, Milner and Wadsworth, 1979][lcf]); the de Bruijn criterion ([Barendregt and Wiedijk, 2005][debruijn]); [Lean 4][lean4] |
+| Passing tests only bound the failure rate; they can't rule a rare bug out | The rule of three ([Hanley and Lippman-Hand, 1983][ruleofthree]) |
 | A proved model, with the real code tested against it | Cedar ([Disselkoen et al., 2024][cedar]) |
 | Writing the spec precisely finds bugs testing misses | [Newcombe et al., 2015][awsfm] (TLA+ at AWS) |
 | Each operation keeps a "stands for" relation | Simulation ([Milner, 1971][milner]) |
@@ -157,3 +170,4 @@ The specification, the proofs, and a page on what to review and what's only test
 [certifying]: https://doi.org/10.1016/j.cosrev.2010.09.009
 [compcert]: https://doi.org/10.1145/1538788.1538814
 [csmith]: https://www-old.cs.utah.edu/~regehr/papers/pldi11-preprint.pdf
+[ruleofthree]: https://pubmed.ncbi.nlm.nih.gov/6827763/
