@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From tested to proved: putting the plan checker in Lean"
-description: "planproof checks AI-written change plans with a small rule-based checker. The first version was trusted because it was small and well tested. Now a copy of it is proved correct in Lean for its five core rules. What changed, what the proof found that 10,000 tests missed, what it cost, and what it still doesn't cover."
+description: "planproof checks AI-written change plans with a small rule-based checker. The first version was trusted because it was small and well tested. Now a copy of it is proved correct in Lean for six of its 13 rules. What changed, what the proof found that 10,000 tests missed, what it cost, and what it still doesn't cover."
 image: /assets/img/posts/planproof-card.png
 mermaid: true
 redirect_from: /planproof-lean/
@@ -15,7 +15,7 @@ This post is about the next step: writing the checker's rules down precisely in 
 
 **In short:**
 
-- **What changed:** a Lean copy of the checker is now proved correct for its five core rules, for every possible plan, cluster snapshot and policy. The Go checker that actually runs is tied to the proved copy by tests that run both on 10,305 inputs and fail on any difference.
+- **What changed:** a Lean copy of the checker is now proved correct for six of its 13 rules, the core ones, for every possible plan, cluster snapshot and policy. The Go checker that actually runs is tied to the proved copy by tests that run both on 10,305 inputs and fail on any difference.
 - **What a reviewer reads:** about 180 lines that say what the cluster may do and what "safe" means. Not the checker, and not the 4,400 lines of proof: Lean checks those mechanically.
 - **What it found:** writing the rules down precisely found **three real bugs** in the original checker. Each was a plan it approved although a real run could take a service down to zero. 10,000 randomly generated test plans hadn't found any of them.
 - **What it doesn't do:** it proves the checker matches *a model* of Kubernetes. Whether the model matches real Kubernetes is still tested, not proved. And it's still a demo, not a production system.
@@ -90,11 +90,11 @@ This matches what others report. AWS engineers reported in 2015 that [precise sp
 | --- | --- | --- |
 | **Why trust it** | Small (about 1,700 lines), no AI, every rule tested both ways, fuzzed, compared with a real cluster | The same, plus a machine-checked proof for the Lean copy |
 | **What a reviewer reads** | The whole checker, about an afternoon | About 180 lines of specification, plus the list of assumptions |
-| **Kind of evidence** | Examples: unit tests, 25 bad plans, 10,000 generated plans, a real cluster | All plans, snapshots and policies within the model, for five core rules |
-| **Rules covered** | All 13, by tests | 5 proved; the other 8 tested (and checked to agree with Go) |
+| **Kind of evidence** | Examples: unit tests, 25 bad plans, 10,000 generated plans, a real cluster | All plans, snapshots and policies within the model, for six core rules |
+| **Rules covered** | All 13, by tests | 6 proved (one only in part); the other 7 tested. Six of those 7 are also in the Lean copy and checked to agree with Go; `input` (parsing) is Go only |
 | **How Go is trusted** | It *is* the checker | It agrees with the proved copy on 10,305 inputs |
 | **Bugs found** | Bugs the tests could see | Three that 10,000 generated plans missed |
-| **What could still be wrong** | Any rule on an untested input; the model | The model; the 8 unproved rules; Go and Lean differing on an input the tests don't cover |
+| **What could still be wrong** | Any rule on an untested input; the model | The model; the 7 unproved rules and the static half of `limits`; Go and Lean differing on an input the tests don't cover |
 | **Cost** | Phases 1 to 4 | About two days of work after the design: 4,400 lines of proof, drafted by an AI and checked by Lean |
 
 The second version doesn't replace the first. Every test from before still runs. The proof adds a guarantee that tests can't give, and moves the remaining risk somewhere smaller and easier to name.
@@ -112,7 +112,7 @@ There's public evidence for this split too. The [Csmith project][csmith] tested 
 
 - **It proves the checker matches a model of Kubernetes, not Kubernetes.** If the model is wrong, the proof is a proof about the wrong thing. The model was compared with a real cluster (it matched exactly in every run), but that's testing.
 - **Only the Lean copy is proved.** The Go checker that runs is linked by tests, as described above.
-- **Five of 13 rules are proved.** The others, such as "only touch services in scope" and "the rollback restores the goal", are tested only.
+- **Six of 13 rules are proved, one of them only in part.** The `limits` rule is proved after every step, but its static half (no replica count or wait time above the policy's maximum) is only tested. The other seven, such as "only touch services in scope" and "the rollback restores the goal", are tested only. The rollback's steps are covered by the six proved rules, though: they hold through the rollback too.
 - **The proof assumes what input validation guarantees:** unique names, no negative numbers, and every step naming what it changes. It also assumes, like the checker always did, that ready pods stay ready and nothing else changes the cluster during the plan. The runner stops if either turns out false.
 - **Capacity is about the checker's own placement.** The proof shows the placement it found fits. The real scheduler may choose a different one.
 - **A person still checks the goal.** No proof can say whether "scale to 5" is what the ticket meant by "scale up".
