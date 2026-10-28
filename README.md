@@ -15,7 +15,7 @@ redirect_from: /short-name/
 ---
 ```
 
-Give every post a short address with `redirect_from`: one to three words, lowercase, hyphenated, ending in `/`, and unique across posts. It redirects to the dated URL (via `jekyll-redirect-from`, which GitHub Pages ships), so `billykong.github.io/short-name/` fits where long links get cut off, such as YouTube descriptions. Use the short address when sharing; keep the dated URL as the canonical one. Existing short addresses: `/safe-ops-lessons/`, `/defence-in-depth/`, `/planproof/`.
+Give every post a short address with `redirect_from`: one to three words, lowercase, hyphenated, ending in `/`, and unique across posts. It redirects to the dated URL (via `jekyll-redirect-from`, which GitHub Pages ships), so `billykong.github.io/short-name/` fits where long links get cut off, such as YouTube descriptions. Use the short address when sharing; keep the dated URL as the canonical one. Existing short addresses: `/safe-ops-lessons/`, `/defence-in-depth/`, `/planproof/`, `/planproof-lean/`, `/saysno/`, `/saysno-loop/`.
 
 Add `mermaid: true` to render ```` ```mermaid ```` blocks.
 
