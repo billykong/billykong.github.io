@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What we learn from five cheap fixes to a coding agent"
+title: "More tokens, a smaller bill, and a deleted draft: five cheap fixes to a coding agent"
 description: "Five small harness changes took a bare coding agent from running its tests in 3 of 36 runs to 35, and cut its bill by a third. The run also turned up two failures nobody would predict: a refused command done another way, and a helpful hint that may have cost a task."
 date: 2026-10-29 00:01:00 +0000
 redirect_from: /saysno-context/

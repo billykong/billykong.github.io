@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What we learn from scoring a bare coding agent"
+title: "The safety rule said no 94% of the time"
 description: "Twelve planted-bug tasks, three runs each, two models. The bare loop passed 30 of 36 for ten cents, but the lessons were under the score: a grader that punished good behaviour, a task that rewarded mind-reading, and a safety rule that refused 94% of shell commands."
 date: 2026-10-29 00:00:00 +0000
 redirect_from: /saysno-first-scores/
