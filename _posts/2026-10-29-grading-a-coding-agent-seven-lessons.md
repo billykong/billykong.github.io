@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My coding agent scored 83%. Then I read the transcripts."
+title: "Grading a coding agent: seven lessons the score didn't show"
 description: "Twelve planted-bug tasks, three runs each, two models. The bare loop passed 30 of 36 for ten cents, but the lessons were under the score: a grader that punished good behaviour, a task that rewarded mind-reading, and a safety rule that refused 94% of shell commands."
 date: 2026-10-29 00:00:00 +0000
 redirect_from: /saysno-first-scores/
