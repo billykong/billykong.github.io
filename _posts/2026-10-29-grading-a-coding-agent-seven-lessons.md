@@ -6,6 +6,8 @@ date: 2026-10-29 00:00:00 +0000
 redirect_from:
   - /saysno-first-scores/
   - /saysno-context/
+  - /saysno-lessons/
+image: /assets/img/posts/grading-seven-lessons-card.png
 ---
 
 [The last post][p2] built a bare coding agent, [saysno][repo], in 171 lines of Python. This one scores it. I wrote twelve tasks with planted bugs, ran each three times on Claude Haiku 5.5 with nobody at the keyboard, fixed what the results showed with five small harness changes, and ran them again.
