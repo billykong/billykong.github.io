@@ -4,6 +4,7 @@ title: "What CPU pinning and huge pages buy you on Kubernetes, measured"
 description: "I gave a latency benchmark its own CPU core on Kubernetes and its tail latency got worse. The kubelet only keeps other pods off a pinned core; the host still uses it. Here is what fixed it, stage by stage, with numbers."
 date: 2026-10-30 00:00:00 +0000
 redirect_from: /cpu-pinning/
+image: /assets/img/posts/cpu-pinning-card.png
 ---
 
 Kubernetes can give a pod its own CPU cores. Turn on the static CPU manager, request whole CPUs, and the kubelet moves every other pod off them. That's the standard advice for latency-sensitive workloads, and it sounds like the end of the story.
